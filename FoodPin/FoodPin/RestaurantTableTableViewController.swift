@@ -88,7 +88,7 @@ class RestaurantTableTableViewController: UITableViewController {
         cell.thumbnailImageView.clipsToBounds = true
         cell.locationLabel.text = self.restaurantLocations[indexPath.row]
         cell.typeLabel.text = self.restaurantTypes[indexPath.row]
-        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
+//        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .Checkmark : .None
 
         return cell
     }
@@ -130,6 +130,7 @@ class RestaurantTableTableViewController: UITableViewController {
 
     // MASK: - Table view delegate
     
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -156,6 +157,22 @@ class RestaurantTableTableViewController: UITableViewController {
         optionMenu.addAction(isVisitedAction)
         
         self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    */
+    
+    // MASK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let destinationController = segue.destinationViewController as! DetailViewController
+                
+                destinationController.restaurantImage = self.restaurantImages[indexPath.row]
+                destinationController.restaurantName = self.restaurantNames[indexPath.row]
+                destinationController.restaurantLocation = self.restaurantLocations[indexPath.row]
+                destinationController.restaurantType = self.restaurantTypes[indexPath.row]
+            }
+        }
     }
 
 }
