@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FoodPin.xcscheme</key>
+		<key>SimpleTable.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>ACA96B181B8D418B0041B789</key>
+		<key>AC1E74E91B8C566200C56E8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ACA96B2D1B8D418B0041B789</key>
+		<key>AC1E74FE1B8C566300C56E8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
