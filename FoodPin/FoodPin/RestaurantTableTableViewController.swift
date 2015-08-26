@@ -92,6 +92,41 @@ class RestaurantTableTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+            
+            let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: nil)
+            let facebookAction = UIAlertAction(title: "Facebook", style: .Default, handler: nil)
+            let emailAction = UIAlertAction(title: "Email", style: .Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(facebookAction)
+            shareMenu.addAction(emailAction)
+            shareMenu.addAction(cancelAction)
+            
+            self.presentViewController(shareMenu, animated: true, completion: nil)
+        })
+        shareAction.backgroundColor = UIColor(red: 255.0 / 255.0, green: 166.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
+        
+        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            self.restaurantNames.removeAtIndex(indexPath.row)
+            self.restaurantLocations.removeAtIndex(indexPath.row)
+            self.restaurantTypes.removeAtIndex(indexPath.row)
+            self.restaurantImages.removeAtIndex(indexPath.row)
+            self.restaurantIsVisited.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        })
+        deleteAction.backgroundColor = UIColor(red: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
+        
+        return [deleteAction, shareAction]
+    }
 
     // MASK: - Table view delegate
     
