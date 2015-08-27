@@ -44,11 +44,19 @@ class RestaurantTableTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = true
     }
 
     // MARK: - Table view data source
@@ -113,13 +121,7 @@ class RestaurantTableTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as! DetailViewController
-                
-                let restaurant = self.restaurants[indexPath.row]
-                
-                destinationController.restaurantImage = restaurant.image
-                destinationController.restaurantName = restaurant.name
-                destinationController.restaurantLocation = restaurant.location
-                destinationController.restaurantType = restaurant.type
+                destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
     }
