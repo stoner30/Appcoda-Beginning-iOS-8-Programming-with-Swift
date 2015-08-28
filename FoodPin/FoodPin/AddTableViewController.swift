@@ -11,14 +11,14 @@ import UIKit
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var noButton: UIButton!
     
-    var restaurant: Restaurant?
+    var isVisited: Bool = true
+    var restaurant: Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,53 +73,46 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
     }
     
-    @IBAction func pressYesButton(sender: UIButton) {
-        if yesButton.backgroundColor == UIColor.redColor() {
-            yesButton.backgroundColor = UIColor.lightGrayColor()
-            noButton.backgroundColor = UIColor.redColor()
-        } else {
-            yesButton.backgroundColor = UIColor.redColor()
-            noButton.backgroundColor = UIColor.lightGrayColor()
-        }
-    }
-    
-    @IBAction func pressNoButton(sender: UIButton) {
-        if noButton.backgroundColor == UIColor.redColor() {
-            noButton.backgroundColor = UIColor.lightGrayColor()
-            yesButton.backgroundColor = UIColor.redColor()
-        } else {
-            noButton.backgroundColor = UIColor.redColor()
-            yesButton.backgroundColor = UIColor.lightGrayColor()
+    @IBAction func updateIsVisited(sender: AnyObject) {
+        let buttonClicked = sender as! UIButton
+        if buttonClicked == yesButton {
+            isVisited = true
+            yesButton.backgroundColor = UIColor(red: 235.0 / 255.0, green: 73.0 / 255.0, blue: 27.0 / 255.0, alpha: 1.0)
+            noButton.backgroundColor = UIColor.grayColor()
+        } else if buttonClicked == noButton {
+            isVisited = false
+            yesButton.backgroundColor = UIColor.grayColor()
+            noButton.backgroundColor = UIColor(red: 235.0 / 255.0, green: 73.0 / 255.0, blue: 27.0 / 255.0, alpha: 1.0)
         }
     }
     
     @IBAction func pressSaveButton(sender: AnyObject) {
-        performSegueWithIdentifier("unwindToHomeScreen", sender: sender)
+        var errorField = ""
         
-        let name = nameTextField.text
-        let location = locationTextField.text
-        let type = typeTextField.text
-        let isVisited = yesButton.backgroundColor == UIColor.redColor()
-        let image = imageView.image!.description
+        if nameTextField.text == "" {
+            errorField = "name"
+        } else if locationTextField.text == "" {
+            errorField = "location"
+        } else if typeTextField.text == "" {
+            errorField = "type"
+        }
         
-        if name.isEmpty || location.isEmpty || type.isEmpty {
-            let alert = UIAlertController(title: "Oops", message: "We can't proceed as you forgot to fill in restaurant name. All fields are mandatory.", preferredStyle: .Alert)
+        if errorField != "" {
+            let alertController = UIAlertController(title: "Oops", message: "We can't proceed as you forgot to fill in the restaurant \(errorField). All fields are mandatory.", preferredStyle: .Alert)
+            let doneAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(doneAction)
             
-            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            self.presentViewController(alertController, animated: true, completion: nil)
             
-            alert.addAction(action)
-            
-            self.presentViewController(alert, animated: true, completion: nil)
             return
         }
         
-        restaurant = Restaurant(name: name, type: type, location: location, image: image, isVisited: isVisited)
+        println("Name: \(nameTextField.text)")
+        println("Location: \(locationTextField.text)")
+        println("Type: \(typeTextField.text)")
+        println("Have you been here: " + (isVisited ? "Yes" : "No"))
         
-        println("Name: \(restaurant!.name)")
-        println("Location: \(restaurant!.location)")
-        println("Type: \(restaurant!.type)")
-        println("Image: \(restaurant!.image)")
-        println("IsVisited: \(restaurant!.isVisited)")
+        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
     }
     
 }

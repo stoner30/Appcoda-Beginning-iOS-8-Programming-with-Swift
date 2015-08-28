@@ -140,7 +140,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressYesButton:" destination="c0p-g2-wQm" eventType="touchUpInside" id="arV-WH-iUs"/>
+                                                        <action selector="updateIsVisited:" destination="c0p-g2-wQm" eventType="touchUpInside" id="fbv-xU-RQ5"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R49-pC-9Mn">
@@ -155,7 +155,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="pressNoButton:" destination="c0p-g2-wQm" eventType="touchUpInside" id="iTA-o8-yTC"/>
+                                                        <action selector="updateIsVisited:" destination="c0p-g2-wQm" eventType="touchUpInside" id="qQe-z2-haf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
