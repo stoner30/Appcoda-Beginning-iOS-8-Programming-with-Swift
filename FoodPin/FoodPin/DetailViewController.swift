@@ -50,6 +50,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! DetailTableViewCell
         
+        cell.mapButton.hidden = true
+        
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -60,6 +62,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         case 2:
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
+            cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = restaurant.isVisited ? "Yes, I've been here before" : "No"
@@ -75,6 +78,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func close(segue: UIStoryboardSegue) {
         
+    }
+    
+    // MASK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destinationViewController as! MapViewController
+            destinationController.restaurant = restaurant
+        }
     }
 
 }
