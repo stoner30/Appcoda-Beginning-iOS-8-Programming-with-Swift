@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC6B64F91B8EEBA100B9515B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B64F81B8EEBA100B9515B /* ReviewViewController.swift */; };
+		AC6B64FB1B8F145000B9515B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B64FA1B8F145000B9515B /* ShareViewController.swift */; };
 		AC6E66ED1B8DC36D0007FF1F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6E66EC1B8DC36D0007FF1F /* Restaurant.swift */; };
 		ACA3EB091B8E046B009201FE /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3EB081B8E046B009201FE /* DetailTableViewCell.swift */; };
 		ACA96B1F1B8D418B0041B789 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA96B1E1B8D418B0041B789 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC6B64F81B8EEBA100B9515B /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		AC6B64FA1B8F145000B9515B /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AC6E66EC1B8DC36D0007FF1F /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		ACA3EB081B8E046B009201FE /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		ACA96B191B8D418B0041B789 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +95,8 @@
 				ACA96B401B8D501A0041B789 /* CustomTableViewCell.swift */,
 				ACC34D5B1B8DB42B00A7C8A4 /* DetailViewController.swift */,
 				ACA3EB081B8E046B009201FE /* DetailTableViewCell.swift */,
+				AC6B64F81B8EEBA100B9515B /* ReviewViewController.swift */,
+				AC6B64FA1B8F145000B9515B /* ShareViewController.swift */,
 				ACA96B221B8D418B0041B789 /* Main.storyboard */,
 				ACA96B251B8D418B0041B789 /* Images.xcassets */,
 				ACA96B271B8D418B0041B789 /* LaunchScreen.xib */,
@@ -224,11 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6B64F91B8EEBA100B9515B /* ReviewViewController.swift in Sources */,
 				ACA3EB091B8E046B009201FE /* DetailTableViewCell.swift in Sources */,
 				AC6E66ED1B8DC36D0007FF1F /* Restaurant.swift in Sources */,
 				ACA96B411B8D501A0041B789 /* CustomTableViewCell.swift in Sources */,
 				ACA96B1F1B8D418B0041B789 /* AppDelegate.swift in Sources */,
 				ACA96B3F1B8D42940041B789 /* RestaurantTableTableViewController.swift in Sources */,
+				AC6B64FB1B8F145000B9515B /* ShareViewController.swift in Sources */,
 				ACC34D5C1B8DB42B00A7C8A4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
