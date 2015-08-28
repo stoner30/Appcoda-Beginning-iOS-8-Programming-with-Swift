@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantTableTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController {
 
     var restaurants: [Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop",
@@ -167,6 +167,10 @@ class RestaurantTableTableViewController: UITableViewController {
                 destinationController.restaurant = self.restaurants[indexPath.row]
             }
         }
+    }
+    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+        
     }
 
 }
