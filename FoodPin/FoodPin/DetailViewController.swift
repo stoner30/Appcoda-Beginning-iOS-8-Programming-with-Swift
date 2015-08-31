@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    // MASK: - Table view data source
+    // MARK: - Table view data source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    // MASK: - Navigation
+    // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {

@@ -58,7 +58,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    // MASK: - Image picker controller delegate
+    // MARK: - Image picker controller delegate
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -68,7 +68,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MASK: - Navigation delegate
+    // MARK: - Navigation delegate
 
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
