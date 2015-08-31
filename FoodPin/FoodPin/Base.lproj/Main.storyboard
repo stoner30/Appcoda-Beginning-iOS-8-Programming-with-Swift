@@ -41,7 +41,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exa-FH-95D">
                                                     <rect key="frame" x="24" y="8" width="272" height="20"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orQ-b1-7PN">
@@ -69,7 +69,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSc-zS-GqO">
                                                     <rect key="frame" x="24" y="8" width="272" height="20"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4T-SA-6OZ">
@@ -97,7 +97,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-Dc-Yss">
                                                     <rect key="frame" x="24" y="8" width="272" height="20"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YDF-Vp-AgI">
@@ -125,7 +125,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAVE YOU BEEN HERE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTb-dB-CF6">
                                                     <rect key="frame" x="24" y="8" width="273" height="20"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-DE-fnD">
@@ -230,7 +230,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy6-gf-HyH">
-                                            <rect key="frame" x="92" y="5" width="220" height="22"/>
+                                            <rect key="frame" x="92" y="5" width="190" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="1jl-dV-wtm"/>
                                             </constraints>
@@ -250,23 +250,33 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="2yk-lI-1lf">
+                                            <rect key="frame" x="290" y="5" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="LPD-zQ-s2m"/>
+                                                <constraint firstAttribute="width" constant="22" id="LzI-y1-mo9"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="oFn-jZ-fhj" firstAttribute="leading" secondItem="muS-lH-uzw" secondAttribute="leadingMargin" constant="8" id="0d7-UP-clb"/>
                                         <constraint firstItem="QNC-lx-fM3" firstAttribute="top" secondItem="rn5-KT-xTD" secondAttribute="bottom" constant="5" id="2Ee-qz-Pxu"/>
                                         <constraint firstItem="rn5-KT-xTD" firstAttribute="top" secondItem="muS-lH-uzw" secondAttribute="topMargin" constant="23" id="6ko-OL-kzF"/>
-                                        <constraint firstItem="Zy6-gf-HyH" firstAttribute="trailing" secondItem="muS-lH-uzw" secondAttribute="trailingMargin" id="G0e-5d-dVA"/>
+                                        <constraint firstItem="2yk-lI-1lf" firstAttribute="trailing" secondItem="muS-lH-uzw" secondAttribute="trailingMargin" id="8Gs-pf-sJj"/>
+                                        <constraint firstItem="Zy6-gf-HyH" firstAttribute="trailing" secondItem="muS-lH-uzw" secondAttribute="trailingMargin" constant="-30" id="G0e-5d-dVA"/>
                                         <constraint firstItem="rn5-KT-xTD" firstAttribute="leading" secondItem="muS-lH-uzw" secondAttribute="leadingMargin" constant="84" id="GPs-DB-MiD"/>
                                         <constraint firstItem="rn5-KT-xTD" firstAttribute="top" secondItem="Zy6-gf-HyH" secondAttribute="bottom" constant="4" id="HCl-Ip-taq"/>
                                         <constraint firstItem="rn5-KT-xTD" firstAttribute="trailing" secondItem="muS-lH-uzw" secondAttribute="trailingMargin" id="Nik-2D-k30"/>
                                         <constraint firstItem="QNC-lx-fM3" firstAttribute="leading" secondItem="muS-lH-uzw" secondAttribute="leadingMargin" constant="84" id="VZZ-mx-mB2"/>
                                         <constraint firstAttribute="centerY" secondItem="rn5-KT-xTD" secondAttribute="centerY" constant="-0.25" id="WYg-tg-bKx"/>
                                         <constraint firstItem="Zy6-gf-HyH" firstAttribute="leading" secondItem="muS-lH-uzw" secondAttribute="leadingMargin" constant="84" id="cfr-wg-gVB"/>
+                                        <constraint firstItem="2yk-lI-1lf" firstAttribute="top" secondItem="muS-lH-uzw" secondAttribute="topMargin" constant="-3" id="lag-Mk-Fek"/>
                                         <constraint firstItem="QNC-lx-fM3" firstAttribute="trailing" secondItem="muS-lH-uzw" secondAttribute="trailingMargin" id="wL4-OW-jfs"/>
                                         <constraint firstItem="oFn-jZ-fhj" firstAttribute="top" secondItem="muS-lH-uzw" secondAttribute="topMargin" constant="2" id="y2X-5r-Jio"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favorIconImageView" destination="2yk-lI-1lf" id="4Z0-kS-vpi"/>
                                     <outlet property="locationLabel" destination="rn5-KT-xTD" id="o6G-Lm-SpI"/>
                                     <outlet property="nameLabel" destination="Zy6-gf-HyH" id="Y74-Eb-4nq"/>
                                     <outlet property="thumbnailImageView" destination="oFn-jZ-fhj" id="Xvw-bI-wFw"/>
@@ -771,6 +781,7 @@
         <image name="facebook" width="64" height="64"/>
         <image name="good" width="64" height="64"/>
         <image name="great" width="64" height="64"/>
+        <image name="heart" width="64" height="64"/>
         <image name="message" width="64" height="64"/>
         <image name="twitter" width="64" height="64"/>
     </resources>

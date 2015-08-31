@@ -21,7 +21,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         self.title = restaurant.name
         
-        self.restaurantImageView.image = UIImage(named: self.restaurant.image)
+        self.restaurantImageView.image = UIImage(data: self.restaurant.image)
         self.tableView.backgroundColor = UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 0.2)
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.separatorColor = UIColor(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0, alpha: 0.8)
@@ -65,7 +65,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = restaurant.isVisited ? "Yes, I've been here before" : "No"
+            cell.valueLabel.text = restaurant.isVisited.boolValue ? "Yes" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""

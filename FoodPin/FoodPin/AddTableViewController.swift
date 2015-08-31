@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -107,10 +108,21 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             return
         }
         
-        println("Name: \(nameTextField.text)")
-        println("Location: \(locationTextField.text)")
-        println("Type: \(typeTextField.text)")
-        println("Have you been here: " + (isVisited ? "Yes" : "No"))
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
+            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant", inManagedObjectContext: managedObjectContext) as! Restaurant
+            
+            restaurant.name = nameTextField.text
+            restaurant.location = locationTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.image = UIImagePNGRepresentation(imageView.image)
+            restaurant.isVisited = isVisited
+            
+            var e: NSError?
+            if managedObjectContext.save(&e) != true {
+                println("insert error: \(e!.localizedDescription)")
+                return
+            }
+        }
         
         performSegueWithIdentifier("unwindToHomeScreen", sender: self)
     }

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACA96B181B8D418B0041B789"
-               BuildableName = "FoodPin.app"
-               BlueprintName = "FoodPin"
-               ReferencedContainer = "container:FoodPin.xcodeproj">
+               BlueprintIdentifier = "AC70CB301B93DDD900BDAD79"
+               BuildableName = "CoreDataDemo.app"
+               BlueprintName = "CoreDataDemo"
+               ReferencedContainer = "container:CoreDataDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACA96B2D1B8D418B0041B789"
-               BuildableName = "FoodPinTests.xctest"
-               BlueprintName = "FoodPinTests"
-               ReferencedContainer = "container:FoodPin.xcodeproj">
+               BlueprintIdentifier = "AC70CB481B93DDD900BDAD79"
+               BuildableName = "CoreDataDemoTests.xctest"
+               BlueprintName = "CoreDataDemoTests"
+               ReferencedContainer = "container:CoreDataDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACA96B2D1B8D418B0041B789"
-               BuildableName = "FoodPinTests.xctest"
-               BlueprintName = "FoodPinTests"
-               ReferencedContainer = "container:FoodPin.xcodeproj">
+               BlueprintIdentifier = "AC70CB481B93DDD900BDAD79"
+               BuildableName = "CoreDataDemoTests.xctest"
+               BlueprintName = "CoreDataDemoTests"
+               ReferencedContainer = "container:CoreDataDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACA96B181B8D418B0041B789"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BlueprintIdentifier = "AC70CB301B93DDD900BDAD79"
+            BuildableName = "CoreDataDemo.app"
+            BlueprintName = "CoreDataDemo"
+            ReferencedContainer = "container:CoreDataDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,18 +76,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACA96B181B8D418B0041B789"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BlueprintIdentifier = "AC70CB301B93DDD900BDAD79"
+            BuildableName = "CoreDataDemo.app"
+            BlueprintName = "CoreDataDemo"
+            ReferencedContainer = "container:CoreDataDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -101,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACA96B181B8D418B0041B789"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BlueprintIdentifier = "AC70CB301B93DDD900BDAD79"
+            BuildableName = "CoreDataDemo.app"
+            BlueprintName = "CoreDataDemo"
+            ReferencedContainer = "container:CoreDataDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
