@@ -23,6 +23,8 @@
 		ACA96B411B8D501A0041B789 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA96B401B8D501A0041B789 /* CustomTableViewCell.swift */; };
 		ACB477971B903BF400D43342 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB477961B903BF400D43342 /* AddTableViewController.swift */; };
 		ACC34D5C1B8DB42B00A7C8A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC34D5B1B8DB42B00A7C8A4 /* DetailViewController.swift */; };
+		ACD7814C1B9573C5008E5FE1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD7814B1B9573C5008E5FE1 /* AboutViewController.swift */; };
+		ACD7814E1B9573ED008E5FE1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD7814D1B9573ED008E5FE1 /* WebViewController.swift */; };
 		ACF5B55E1B8FF7FF00097D9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF5B55D1B8FF7FF00097D9A /* MapKit.framework */; };
 		ACF5B5601B8FFD2100097D9A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5B55F1B8FFD2100097D9A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		ACA96B401B8D501A0041B789 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		ACB477961B903BF400D43342 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		ACC34D5B1B8DB42B00A7C8A4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACD7814B1B9573C5008E5FE1 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		ACD7814D1B9573ED008E5FE1 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ACF5B55D1B8FF7FF00097D9A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ACF5B55F1B8FFD2100097D9A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,8 @@
 				ACB477961B903BF400D43342 /* AddTableViewController.swift */,
 				AC96CE111B943A8100F4024E /* PageContentViewController.swift */,
 				AC96CE131B943DBB00F4024E /* PageViewController.swift */,
+				ACD7814B1B9573C5008E5FE1 /* AboutViewController.swift */,
+				ACD7814D1B9573ED008E5FE1 /* WebViewController.swift */,
 				ACA96B221B8D418B0041B789 /* Main.storyboard */,
 				AC70CB591B93EAD900BDAD79 /* FoodPin.xcdatamodeld */,
 				ACA96B251B8D418B0041B789 /* Images.xcassets */,
@@ -264,8 +270,10 @@
 				ACA96B3F1B8D42940041B789 /* RestaurantTableViewController.swift in Sources */,
 				AC6B64FB1B8F145000B9515B /* ShareViewController.swift in Sources */,
 				AC96CE121B943A8100F4024E /* PageContentViewController.swift in Sources */,
+				ACD7814C1B9573C5008E5FE1 /* AboutViewController.swift in Sources */,
 				AC96CE141B943DBB00F4024E /* PageViewController.swift in Sources */,
 				ACC34D5C1B8DB42B00A7C8A4 /* DetailViewController.swift in Sources */,
+				ACD7814E1B9573ED008E5FE1 /* WebViewController.swift in Sources */,
 				ACB477971B903BF400D43342 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
