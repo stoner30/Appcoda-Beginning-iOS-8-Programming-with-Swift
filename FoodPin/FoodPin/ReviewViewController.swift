@@ -17,8 +17,8 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
@@ -28,7 +28,7 @@ class ReviewViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(0.7, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.5, options: .TransitionNone, animations: {
             let scale = CGAffineTransformMakeScale(1.0, 1.0)
             let translate = CGAffineTransformMakeTranslation(0.0, 0.0)
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)

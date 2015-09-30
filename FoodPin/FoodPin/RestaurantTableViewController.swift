@@ -49,7 +49,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         searchController.searchBar.barTintColor = UIColor(red: 0.93, green: 0.32, blue: 0.14, alpha: 1.0)
         searchController.searchBar.tintColor = UIColor.whiteColor()
         
-        var fetchRequest = NSFetchRequest(entityName: "Restaurant")
+        let fetchRequest = NSFetchRequest(entityName: "Restaurant")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -57,12 +57,11 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
             fetchedResultsController.delegate = self
             
-            var e: NSError?
-            var result = fetchedResultsController.performFetch(&e)
-            restaurants = fetchedResultsController.fetchedObjects as! [Restaurant]
-            
-            if result != true {
-                println(e?.localizedDescription)
+            do {
+                try fetchedResultsController.performFetch()
+                restaurants = fetchedResultsController.fetchedObjects as! [Restaurant]
+            } catch {
+                print(error)
             }
         }
     }
@@ -120,8 +119,8 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
     
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
             
             let twitterAction = UIAlertAction(title: "Twitter", style: .Default, handler: nil)
@@ -138,14 +137,15 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         })
         shareAction.backgroundColor = UIColor(red: 255.0 / 255.0, green: 166.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
         
-        var deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
                 let restaurantToDelete = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Restaurant
                 managedObjectContext.deleteObject(restaurantToDelete)
                 
-                var e: NSError?
-                if managedObjectContext.save(&e) != true {
-                    println("delete error: \(e?.localizedDescription)")
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print("delete error: \(error)")
                 }
             }
         })
@@ -158,7 +158,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showRestaurantDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! DetailViewController
                 
                 destinationController.hidesBottomBarWhenPushed = true
@@ -208,9 +208,10 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     // MARK: - Search results updating
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchText = searchController.searchBar.text
-        filterContentForSearchText(searchText)
-        tableView.reloadData()
+        if let searchText = searchController.searchBar.text {
+            filterContentForSearchText(searchText)
+            tableView.reloadData()
+        }
     }
 
 }

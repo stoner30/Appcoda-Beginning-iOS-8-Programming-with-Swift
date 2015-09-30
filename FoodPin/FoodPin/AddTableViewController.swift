@@ -60,7 +60,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     
     // MARK: - Image picker controller delegate
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.clipsToBounds = true
@@ -114,12 +114,15 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             restaurant.name = nameTextField.text
             restaurant.location = locationTextField.text
             restaurant.type = typeTextField.text
-            restaurant.image = UIImagePNGRepresentation(imageView.image)
+            if let image = imageView.image {
+                restaurant.image = UIImagePNGRepresentation(image)
+            }
             restaurant.isVisited = isVisited
             
-            var e: NSError?
-            if managedObjectContext.save(&e) != true {
-                println("insert error: \(e!.localizedDescription)")
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print("insert error: \(error)")
                 return
             }
         }

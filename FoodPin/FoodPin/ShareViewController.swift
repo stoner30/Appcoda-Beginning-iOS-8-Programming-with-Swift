@@ -21,8 +21,8 @@ class ShareViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
@@ -43,16 +43,16 @@ class ShareViewController: UIViewController {
         messageView.hidden = false
         emailView.hidden = false
         
-        UIView.animateWithDuration(1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .TransitionNone, animations: {
             self.facebookView.transform = CGAffineTransformMakeTranslation(0, 0)
         }, completion: nil)
-        UIView.animateWithDuration(1.5, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(1.5, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .TransitionNone, animations: {
             self.twitterView.transform = CGAffineTransformMakeTranslation(0, 0)
         }, completion: nil)
-        UIView.animateWithDuration(1.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(1.5, delay: 0.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .TransitionNone, animations: {
             self.messageView.transform = CGAffineTransformMakeTranslation(0, 0)
         }, completion: nil)
-        UIView.animateWithDuration(1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(1.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .TransitionNone, animations: {
             self.emailView.transform = CGAffineTransformMakeTranslation(0, 0)
         }, completion: nil)
     }
